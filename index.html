@@ -1,0 +1,108 @@
+<html>
+<head>
+
+  <title>les Oreilles Bleues</title>
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>  
+    <div id="wrapper">
+      <div id="home" class="page paper">
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac est sed sapien consectetur facilisis ac ac turpis. Phasellus sit amet libero eu diam volutpat lobortis. Etiam turpis augue, faucibus quis tempus at, rhoncus eu neque. Donec libero tortor, aliquet ac volutpat sed, fringilla at nibh. Praesent ut lacus eros. Mauris vulputate dolor sit amet elit sagittis vehicula. Phasellus nibh lectus, commodo at venenatis ut, luctus vitae tellus. Aliquam semper, ligula at tempor consequat, ligula leo pulvinar eros, in iaculis justo est non arcu. Aenean condimentum ultricies nisl, quis mollis est laoreet eget. Sed viverra nulla sit amet erat sollicitudin fermentum.
+      </div>
+
+      <div id="music" class="page paper">
+        <iframe width="100%" height="450" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2125393&show_artwork=true"></iframe>
+      </div>
+
+      <div id="band" class="page paper clearfix">
+        <div class="member">
+          <img src="images/portraits/portrait.jpg" />
+          <h3 class="member-name">Dmitry</h3>
+          <h4 class="member-instrument">drums, vocals</h4>
+          <p>
+            Dmitry is not only incredibly good-looking, he can also play drums tirelessly for hours without losing energy. 
+          </p>
+        </div>
+        <div class="member">
+          <img src="images/portraits/portrait.jpg" />
+          <h3 class="member-name">Daniel</h3>
+          <h4 class="member-instrument">bass, vocals</h4>
+          <p>
+            Daniel is not only incredibly good-looking, he can also play bass tirelessly for hours without losing energy. 
+          </p>
+        </div>
+        <div class="member">
+          <img src="images/portraits/portrait.jpg" />
+          <h3 class="member-name">Florian</h3>
+          <h4 class="member-instrument">vocals, guitar</h4>
+          <p>
+            Florian is not only incredibly good-looking, he also masters the art of breaking guitar strings. 
+          </p>
+        </div>
+      </div>
+
+      <div id="photos" class="page">
+        This is the photo section.
+        <div class="clearfix">
+          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8923.JPG"></a>
+          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8924.JPG"></a>
+          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8925.JPG"></a>
+          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8926.JPG"></a>
+        </div>
+      </div>
+
+      <div id="contact" class="page paper">
+        For booking information please contact us at booking@lesoreillesbleues.eu
+      </div>
+    </div>
+  </div>
+
+  <h1 id="main-title"><a href="#home" class="paper">les Oreilles Bleues</a></h1>
+
+  <ul id="nav">
+    <li><a href="#music" class="paper">Music</a></li>
+    <li><a href="#band" class="paper">the Band</a></li>
+    <li><a href="#photos" class="paper">Photos</a></li>
+    <li><a href="#contact" class="paper">Contact</a></li>
+  </ul>
+
+
+  <ul id="socialmedia" class="paper">
+    <li><a href="http://twitter.com">twitter</a></li>
+    <li><a href="http://last.fm">last.fm</a></li>
+    <li><a href="http://thesixtyone.com">thesixtyone</a></li>
+    <li><a href="https://plus.google.com/112959703056041117683?prsrc=3" rel="publisher" style="text-decoration:none;" target="_blank"><img src="https://ssl.gstatic.com/images/icons/gplus-16.png" alt="" style="border:0;width:16px;height:16px;"/></a><li>
+  </ul>
+
+  <div id="background-wrapper">
+    <div id="background">
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
+  <script type="text/javascript" src="js/jquery.localScroll.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var duration = 1000;
+      var wrapper = $('#wrapper').position();
+
+      $(window).scroll(function() {
+        $('#background').css('top', - $(this).scrollTop() / 10);
+      });
+      $('#nav, #main-title').localScroll({
+         axis:'xy',
+         margin: true,
+         duration: duration
+      });
+
+      $('#nav a').click(function() {
+        $('#nav a.active').removeClass('active');
+        $(this).addClass('active');
+      });
+
+    });
+  </script>
+</body>
+</html>
