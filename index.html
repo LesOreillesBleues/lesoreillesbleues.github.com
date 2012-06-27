@@ -3,6 +3,7 @@
 
   <title>les Oreilles Bleues</title>
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/colorbox.css" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 </head>
 
@@ -46,10 +47,10 @@
       <div id="photos" class="page">
         This is the photo section.
         <div class="clearfix">
-          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8923.JPG"></a>
-          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8924.JPG"></a>
-          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8925.JPG"></a>
-          <a href="#" class="thumbnail"><img src="images/thumbnails/IMG_8926.JPG"></a>
+          <a href="images/thumbnails/IMG_8923.JPG" class="thumbnail"><img src="images/thumbnails/IMG_8923.JPG"></a>
+          <a href="images/thumbnails/IMG_8924.JPG" class="thumbnail"><img src="images/thumbnails/IMG_8924.JPG"></a>
+          <a href="images/thumbnails/IMG_8925.JPG" class="thumbnail"><img src="images/thumbnails/IMG_8925.JPG"></a>
+          <a href="images/thumbnails/IMG_8926.JPG" class="thumbnail"><img src="images/thumbnails/IMG_8926.JPG"></a>
         </div>
       </div>
 
@@ -85,20 +86,29 @@
   <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
   <script type="text/javascript" src="js/jquery.localScroll.js"></script>
   <script type="text/javascript" src="js/bootstrap-scrollspy.js"></script>
+  <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      var duration = 1000;
+      var duration = 800;
       var wrapper = $('#wrapper').position();
       var $background = $('#background');
+      var $window = $(window);
+      var scrollPosition = $window.scrollTop();
 
-      $(window).scroll(function() {
-        $background.css('top', - $(this).scrollTop() / 10);
+      $window.scroll(function(asdf) {
+        var newScrollPosition = $window.scrollTop();
+        if (Math.abs(scrollPosition - newScrollPosition) > 1) {
+          $background.css('top', - newScrollPosition / 10);
+          scrollPosition = newScrollPosition;
+        }
       });
       $('#nav, #main-title').localScroll({
          axis:'xy',
          margin: true,
          duration: duration
       });
+
+      $('#photos a').colorbox({rel:'group1', height:"75%"});
 
       $('#nav').scrollspy();
 
