@@ -74,6 +74,7 @@ body {
   transform: rotate(-0.5deg);
   width: 100%;
   text-align: center;
+  font-size: 13px;
 }
 #socialmedia li {
   list-style: none;
