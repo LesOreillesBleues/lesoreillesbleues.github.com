@@ -110,7 +110,9 @@ body {
   text-decoration: underline;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, .5);
 }
-
+.page.paper a {
+  text-decoration: underline;
+}
 
 .member {
   width: 180px;
