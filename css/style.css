@@ -118,13 +118,17 @@ body {
 }
 
 .member {
-  width: 180px;
+  margin-bottom: 20px;
+}
+.member img {
   float: left;
-  padding: 10px;
+  margin-right: 40px;
 }
 .member h3, .member h4{
-  text-align: center;
   margin: 0.5em 0;
+}
+.member ul {
+  margin-left: 30px;
 }
 
 .page.paper {
