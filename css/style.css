@@ -116,6 +116,14 @@ body {
 .page.paper a {
   text-decoration: underline;
 }
+.page img.content-image {
+  width: 110%;
+  box-shadow: 0 1px 5px rgba(0,0,0,.5);
+  -webkit-transform: rotate(-1.5deg);
+  -moz-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg);
+  margin-right: -20px;
+}
 
 .member {
   margin-bottom: 20px;
