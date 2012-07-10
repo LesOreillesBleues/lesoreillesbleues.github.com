@@ -91,10 +91,6 @@
 
   <a id="photo-credit" href="http://www.flickr.com/photos/picsfromjos/">Photo by Joseph Stevenson</a>
 
-  <div id="background-wrapper"> <div id="background">
-    </div>
-  </div>
-
   <script type="text/javascript" src="js/all.min.js"></script>
 <!--  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
   <script type="text/javascript" src="js/jquery.scrollTo.js"></script>
@@ -104,16 +100,11 @@
     $(document).ready(function() {
       var duration = 800;
       var wrapper = $('#wrapper').position();
-      var $background = $('#background');
+      var $background = $('body');
       var $window = $(window);
-      var scrollPosition = $window.scrollTop();
 
       $window.scroll(function(asdf) {
-        var newScrollPosition = $window.scrollTop();
-        if (Math.abs(scrollPosition - newScrollPosition) > 1) {
-          $background.css('top', - newScrollPosition / 10);
-          scrollPosition = newScrollPosition;
-        }
+          $background.css('background-position-y', - $window.scrollTop() / 10);
       });
       $('#nav, #main-title').localScroll({
          axis:'xy',
