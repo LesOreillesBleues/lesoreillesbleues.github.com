@@ -108,7 +108,7 @@ body {
   -webkit-transform: rotate(-1.5deg);
   -moz-transform: rotate(-1.5deg);
   transform: rotate(-1.5deg);
-  margin-right: -20px;
+  margin-left: -20px;
   border: solid 5px #eee;
 }
 
