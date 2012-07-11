@@ -54,14 +54,10 @@ body {
 }
 
 #socialmedia {
-  position: fixed;
   bottom: -3px;
   margin: 0;
   padding: 7px;
-  -webkit-transform: rotate(-0.5deg);
-  -moz-transform: rotate(-0.5deg);
-  transform: rotate(-0.5deg);
-  width: 100%;
+  width: auto;
   text-align: center;
   font-size: 13px;
 }
@@ -72,8 +68,7 @@ body {
 }
 
 #photo-credit {
-  position: fixed;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   font-family: sans-serif;
   color: #999;
@@ -170,8 +165,15 @@ body {
   }
 
   #socialmedia {
+    -webkit-transform: rotate(-0.5deg);
+    -moz-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+    position: fixed;
     right: 100px;
-    width: auto;
+  }
+  #photo-credit {
+    bottom: 0;
+    position: fixed;
   }
 
   .page {
