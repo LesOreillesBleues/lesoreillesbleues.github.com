@@ -99,6 +99,10 @@
         </div>
       </div>
 
+      <div id="newsletter" class="page paper">
+         <iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGZ2LTZpd014TWs3RGl1WEE2Z2hnYVE6MQ" width="100%" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+
       <div id="contact" class="page paper">
         <h2>Contact</h2>
         For booking information please contact us at <a href="mailto:booking@lesoreillesbleues.eu">booking@lesoreillesbleues.eu</a>.
@@ -112,6 +116,7 @@
     <li><a href="#music" class="paper">Music</a></li>
     <li><a href="#band" class="paper">the Band</a></li>
     <li><a href="#photos" class="paper">Photos</a></li>
+    <li><a href="#newsletter" class="paper">Newsletter</a></li>
     <li><a href="#contact" class="paper">Contact</a></li>
   </ul>
 
@@ -136,8 +141,8 @@
       var $background = $('body');
       var $window = $(window);
 
-      $window.scroll(function(asdf) {
-          $background.css('background-position-y', - $window.scrollTop() / 10);
+      $window.scroll(function() {
+        $background.css('background-position-y', - $window.scrollTop() / 10);
       });
       $('#nav, #main-title').localScroll({
          axis:'xy',
