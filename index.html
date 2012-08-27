@@ -9,7 +9,7 @@
 </head>
 
 <body>  
-
+    <div id="top"></div>
     <div id="wrapper">
       <div id="home" class="page paper">
         <img src="images/homepage.jpg" alt="les Oreilles Bleues" class="content-image"/>
@@ -120,8 +120,7 @@
   </ul>
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.2/jquery.scrollTo.min.js"></script>
-  <script type="text/javascript" src="js/jquery.localScroll.js"></script>
+  
   <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
@@ -133,14 +132,33 @@
       $window.scroll(function() {
         $background.css('background-position-y', - $window.scrollTop() / 10);
       });
-      $('#nav, #main-title').localScroll({
-         axis:'xy',
-         margin: true,
-         duration: duration
+
+      $('#main-title').click(function() {
+        return scroller($("#top"));
+      });
+      $('#nav li a').click(function() {
+        return scroller($(this.hash));
       });
 
       $('#photos a').colorbox({rel:'group1', height:"75%"});
+      
+      /**
+      * provide a global scroll function
+      *
+      * @param obj jQuery-object
+      */
+      function scroller(target) {
+        if (target.length) {
+          var margin = $(target).css('margin-top');
+          $('html,body').animate({
+            scrollTop: target.offset().top - 120
+          }, duration);
+          return false;
+        }
+        return true;
+      }
     });
+
   </script>
   <script type="text/javascript">
 
