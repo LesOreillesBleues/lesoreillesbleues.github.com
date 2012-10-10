@@ -151,9 +151,11 @@
       });
 
       $('#main-title').click(function() {
+        _gaq.push(['_trackEvent', 'Navigation', 'Click', 'Home']);
         return scroller($("#top"));
       });
       $('#nav li a').click(function() {
+        _gaq.push(['_trackEvent', 'Navigation', 'Click', $(this).html(), $(this).attr('href')]);
         return scroller($(this.hash));
       });
 
